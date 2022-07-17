@@ -99,3 +99,90 @@ var emp1 = new Array("Parbati", 13, "sindhuli");
 for (i = 0; i < emp1.length; i++) {
   document.write(emp1[i] + "<br>");
 }
+
+//The area of the triangle
+var side1 = 6;
+var side2 = 8;
+var side3 = 9;
+var s = (side1 + side2 + side3) / 2;
+var areaOfTriangle = Math.sqrt(s * ((s - side1) * (s - side2) * (s - side3)));
+document.write(areaOfTriangle);
+document.getElementById(area_triangle.value);
+
+//rotate the string
+function animate_string(id) {
+  const element = document.getElementById(id);
+  const textNode = element.childNodes[0];
+  let text = textNode.data;
+
+  setInterval(() => {
+    text = text[text.length - 1] + text.substring(0, text.length - 1);
+    textNode.data = text;
+  }, 100);
+}
+$(document).ready(function () {
+  $("p").click(function () {
+    $(this).hide();
+  });
+  $("h2").click(function () {
+    $(this).hide();
+  });
+});
+
+$(document).ready(function () {
+  $("button").mouseenter(function () {
+    $("p").hide();
+    $("h3").hide();
+  });
+});
+// $(document).ready(function () {
+//   $("#hovereffect").hover(
+//     function () {
+//       alert("hello hover");
+//     },
+//     function () {
+//       alert("leave");
+//     }
+//   );
+// });
+
+$(document).ready(function () {
+  $("input").focus(function () {
+    $(this).css("background-color", "#cccccc");
+  });
+  $("input").blur(function () {
+    $(this).css("background-color", "green");
+  });
+});
+
+//multiple event handlers
+$(document).ready(function () {
+  $(".multiple_event").on({
+    mouseenter: function () {
+      $(this).css("background-color", "red");
+    },
+    mouseleave: function () {
+      $(this).css("background-color", "yellow");
+    },
+    click: function () {
+      $(this).css("background-color", "blue");
+    },
+  });
+});
+
+$(document).ready(function () {
+  $("#button_fadein").click(function () {
+    $("#div1").fadeIn();
+    $("#div2").fadeIn("slow");
+    $("#div3").fadeIn(3000).slideUp(3000);
+  });
+});
+
+//callback
+$(document).ready(function () {
+  $(".callback_hide").click(function () {
+    $(".calback_ex").hide("slow", function () {
+      alert("The paragraph is now hidden");
+    });
+  });
+});
